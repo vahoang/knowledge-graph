@@ -1,0 +1,1301 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+        <link rel="prev" href="..">
+      
+      
+        <link rel="next" href="../graph/">
+      
+      
+      <link rel="icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.5.34">
+    
+    
+      
+        <title>Git Flow - Knowledge Sharing</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.35f28582.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    <body dir="ltr">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#git-flow" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href=".." title="Knowledge Sharing" class="md-header__button md-logo" aria-label="Knowledge Sharing" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Knowledge Sharing
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Git Flow
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="Knowledge Sharing" class="md-nav__button md-logo" aria-label="Knowledge Sharing" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    Knowledge Sharing
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    About this page
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    Git Flow
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  <span class="md-ellipsis">
+    Git Flow
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#introduction" class="md-nav__link">
+    <span class="md-ellipsis">
+      Introduction
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#requirements-and-tips" class="md-nav__link">
+    <span class="md-ellipsis">
+      Requirements and Tips
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#the-workflow" class="md-nav__link">
+    <span class="md-ellipsis">
+      The workflow
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="The workflow">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#important" class="md-nav__link">
+    <span class="md-ellipsis">
+      Important
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#branches" class="md-nav__link">
+    <span class="md-ellipsis">
+      Branches
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Branches">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#master-branch" class="md-nav__link">
+    <span class="md-ellipsis">
+      master branch
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dev-branch" class="md-nav__link">
+    <span class="md-ellipsis">
+      dev branch
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#rc-branch" class="md-nav__link">
+    <span class="md-ellipsis">
+      RC branch
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#hotfix-branch" class="md-nav__link">
+    <span class="md-ellipsis">
+      HotFix branch
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#featureticket-branches" class="md-nav__link">
+    <span class="md-ellipsis">
+      FEATURE/TICKET branches
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#roles" class="md-nav__link">
+    <span class="md-ellipsis">
+      Roles
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#user-stories" class="md-nav__link">
+    <span class="md-ellipsis">
+      User stories
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="User stories">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#developers" class="md-nav__link">
+    <span class="md-ellipsis">
+      Developers
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Developers">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#prepare-the-environment" class="md-nav__link">
+    <span class="md-ellipsis">
+      Prepare the environment
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#create-a-feature-branch" class="md-nav__link">
+    <span class="md-ellipsis">
+      Create a feature branch
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#sync-your-feature-branch" class="md-nav__link">
+    <span class="md-ellipsis">
+      Sync your feature branch
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#request-to-pull" class="md-nav__link">
+    <span class="md-ellipsis">
+      Request to pull
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#create-patches" class="md-nav__link">
+    <span class="md-ellipsis">
+      Create patches
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#apply-a-patch" class="md-nav__link">
+    <span class="md-ellipsis">
+      Apply a patch
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#release-manager" class="md-nav__link">
+    <span class="md-ellipsis">
+      Release manager
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Release manager">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#prepare-the-environment_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      Prepare the environment
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#process-pull-requests" class="md-nav__link">
+    <span class="md-ellipsis">
+      Process pull requests
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#prepare-a-release-candidate" class="md-nav__link">
+    <span class="md-ellipsis">
+      Prepare a Release Candidate
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#hot-fixes" class="md-nav__link">
+    <span class="md-ellipsis">
+      Hot Fixes
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#tips-and-howtos" class="md-nav__link">
+    <span class="md-ellipsis">
+      Tips and HOWTOs
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Tips and HOWTOs">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#how-to-recover-after-upstream-branch-was-rebased" class="md-nav__link">
+    <span class="md-ellipsis">
+      How to recover after upstream branch was rebased.
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../graph/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Knowledge Graphs
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#introduction" class="md-nav__link">
+    <span class="md-ellipsis">
+      Introduction
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#requirements-and-tips" class="md-nav__link">
+    <span class="md-ellipsis">
+      Requirements and Tips
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#the-workflow" class="md-nav__link">
+    <span class="md-ellipsis">
+      The workflow
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="The workflow">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#important" class="md-nav__link">
+    <span class="md-ellipsis">
+      Important
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#branches" class="md-nav__link">
+    <span class="md-ellipsis">
+      Branches
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Branches">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#master-branch" class="md-nav__link">
+    <span class="md-ellipsis">
+      master branch
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dev-branch" class="md-nav__link">
+    <span class="md-ellipsis">
+      dev branch
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#rc-branch" class="md-nav__link">
+    <span class="md-ellipsis">
+      RC branch
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#hotfix-branch" class="md-nav__link">
+    <span class="md-ellipsis">
+      HotFix branch
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#featureticket-branches" class="md-nav__link">
+    <span class="md-ellipsis">
+      FEATURE/TICKET branches
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#roles" class="md-nav__link">
+    <span class="md-ellipsis">
+      Roles
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#user-stories" class="md-nav__link">
+    <span class="md-ellipsis">
+      User stories
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="User stories">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#developers" class="md-nav__link">
+    <span class="md-ellipsis">
+      Developers
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Developers">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#prepare-the-environment" class="md-nav__link">
+    <span class="md-ellipsis">
+      Prepare the environment
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#create-a-feature-branch" class="md-nav__link">
+    <span class="md-ellipsis">
+      Create a feature branch
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#sync-your-feature-branch" class="md-nav__link">
+    <span class="md-ellipsis">
+      Sync your feature branch
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#request-to-pull" class="md-nav__link">
+    <span class="md-ellipsis">
+      Request to pull
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#create-patches" class="md-nav__link">
+    <span class="md-ellipsis">
+      Create patches
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#apply-a-patch" class="md-nav__link">
+    <span class="md-ellipsis">
+      Apply a patch
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#release-manager" class="md-nav__link">
+    <span class="md-ellipsis">
+      Release manager
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Release manager">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#prepare-the-environment_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      Prepare the environment
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#process-pull-requests" class="md-nav__link">
+    <span class="md-ellipsis">
+      Process pull requests
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#prepare-a-release-candidate" class="md-nav__link">
+    <span class="md-ellipsis">
+      Prepare a Release Candidate
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#hot-fixes" class="md-nav__link">
+    <span class="md-ellipsis">
+      Hot Fixes
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#tips-and-howtos" class="md-nav__link">
+    <span class="md-ellipsis">
+      Tips and HOWTOs
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Tips and HOWTOs">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#how-to-recover-after-upstream-branch-was-rebased" class="md-nav__link">
+    <span class="md-ellipsis">
+      How to recover after upstream branch was rebased.
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+<h1 id="git-flow">Git Flow</h1>
+<p>Stolen from <a href="https://github.com/AnarManafov/GitWorkflow/blob/master/GitWorkflow.markdown">here</a></p>
+<p><strong>Table of Contents</strong></p>
+<ul>
+<li><a href="#git-flow">Git Flow</a></li>
+<li><a href="#introduction">Introduction</a></li>
+<li><a href="#requirements-and-tips">Requirements and Tips</a></li>
+<li><a href="#the-workflow">The workflow</a><ul>
+<li><a href="#important">Important</a></li>
+<li><a href="#branches">Branches</a></li>
+<li><a href="#master-branch">master branch</a></li>
+<li><a href="#dev-branch">dev branch</a></li>
+<li><a href="#rc-branch">RC branch</a></li>
+<li><a href="#hotfix-branch">HotFix branch</a></li>
+<li><a href="#featureticket-branches">FEATURE/TICKET branches</a></li>
+<li><a href="#roles">Roles</a></li>
+</ul>
+</li>
+<li><a href="#user-stories">User stories</a><ul>
+<li><a href="#developers">Developers</a></li>
+<li><a href="#prepare-the-environment">Prepare the environment</a></li>
+<li><a href="#create-a-feature-branch">Create a feature branch</a></li>
+<li><a href="#sync-your-feature-branch">Sync your feature branch</a></li>
+<li><a href="#request-to-pull">Request to pull</a></li>
+<li><a href="#create-patches">Create patches</a></li>
+<li><a href="#apply-a-patch">Apply a patch</a></li>
+<li><a href="#release-manager">Release manager</a></li>
+<li><a href="#prepare-the-environment-1">Prepare the environment</a></li>
+<li><a href="#process-pull-requests">Process pull requests</a></li>
+<li><a href="#prepare-a-release-candidate">Prepare a Release Candidate</a></li>
+<li><a href="#hot-fixes">Hot Fixes</a></li>
+</ul>
+</li>
+<li><a href="#tips-and-howtos">Tips and HOWTOs</a><ul>
+<li><a href="#how-to-recover-after-upstream-branch-was-rebased">How to recover after upstream branch was rebased.</a></li>
+</ul>
+</li>
+</ul>
+<h2 id="introduction">Introduction</h2>
+<p>This document describes a git workflow for development teams. The workflow aims to provide:</p>
+<ul>
+<li>uninterruptible development,</li>
+<li>a stable and releasable at any time master,</li>
+<li>a multilevel protection against conflicts,</li>
+<li>a multilevel possibility to recover from errors/mistakes before changes come into the master,</li>
+<li>a clean, leaner history of the master branch without merge commits and other unwanted garbage.</li>
+</ul>
+<hr />
+<p><strong>Treat public history as immutable, atomic, and easy to follow.
+Treat private history as disposable and malleable.</strong></p>
+<hr />
+<h2 id="requirements-and-tips">Requirements and Tips</h2>
+<ul>
+<li>Use one branch per feature/bug (contained development).
+   Every tick/task/feature MUST be implemented on a separate branch. Basically each JIRA ticket should be represented by at least one branch.</li>
+<li>Only release managers are allowed to work on the central master branch.</li>
+<li>Cherry picking MUST not be used by any means.</li>
+<li>A good use of branches should prevent the need of "git cherry-pick".</li>
+<li>DO NOT create very large repositories.</li>
+<li>DO NOT commit large binary files.</li>
+<li>DO NOT commit any file, which can be regenerated or which is generated automatically by your development environment.</li>
+<li>Remember to rebase your feature branch before merging it to the Development branch.</li>
+<li>Specify the origin and branch when pushing (might avoid mistakes).</li>
+<li>Use "git pull --rebase" in order to avoid merges from upstream commits.</li>
+</ul>
+<h2 id="the-workflow">The workflow</h2>
+<p><img alt="Alt text" src="../files/GitWorkflow_fig1.png" /></p>
+<h3 id="important">Important</h3>
+<p>In your development process, you must strictly distinguish between Features, Fixes and Hot Fixes.</p>
+<ul>
+<li><strong>Features</strong>, <strong>Fixes</strong> - are patches, which can wait until the next release of the product. This is why they travail starting from private feature branches ---&gt; the central dev branch ---&gt; the central release branch ---&gt; the central master</li>
+<li><strong>Hot Fixes</strong> - are the patches, which can't wait and must be applied directly on a release version of the product. This is why they have completely different path: a new private branch from the given tag on the central master  ---&gt; central master.</li>
+</ul>
+<h3 id="branches">Branches</h3>
+<p>There are only a few long term branches - <strong>master</strong> and <strong>dev</strong>. All other branches should be deleted as soon as their commits are merged into the master or you don't need them.</p>
+<p>Use the following command to find out branches, which a merged into the mainrepo/master:</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>git branch --merged mainrepo/master
+</span></code></pre></div>
+<p>or not merged:</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>git branch --no-merged mainrepo/master
+</span></code></pre></div>
+<h4 id="master-branch">master branch</h4>
+<p>Contains all the stable, released code.</p>
+<ul>
+<li>All released versions of all modules should be tagged in the master.</li>
+<li>No separate branches for the released versions.</li>
+<li>The master branch is ready to build at any moment.</li>
+<li>No development should be performed on the master branch directly.</li>
+<li>Only release managers have write permissions on it.</li>
+<li>The master branch rolls only forward, no history changes are allowed on the master branch.</li>
+<li>All new patches are introduced in the master branch only via "git merge --ff-only".</li>
+</ul>
+<h4 id="dev-branch">dev branch</h4>
+<ul>
+<li>The branch is inherited from the latest master.</li>
+<li>The dev branch is a development mainstream.</li>
+<li>A release manager defines a list of tasks for a development sprint. For each task, developers MUST create a separate branch inherited from the <strong>dev</strong> branch.</li>
+<li>Should be rebased from the <strong>master</strong> each time <strong>master</strong> is changed.</li>
+</ul>
+<h4 id="rc-branch">RC branch</h4>
+<p>RC or ReleaseCandidate branch is a temporary branch. This branch intends to provide uninterruptible development - to avoid such mails like "Please do not commit..., we freeze a branch" :).</p>
+<p>At the moment of a release, a release manager will branch from <strong>dev</strong> to create an <strong>RC</strong> branch to start a release procedure. It also means feature freeze on the <strong>RC</strong> branch and only bug fixes can be introduced on it - no commits with new features.</p>
+<p>While a release manager works on the <strong>RC</strong> branch, all developers continue developing in <strong>dev</strong> and in their feature branches - uninterruptible development.</p>
+<p>The branch should be deleted as soon as it has been merged with the <strong>master</strong>. Once the <strong>RC</strong> branch is merged into the <strong>master</strong>, the <strong>dev</strong> branch should be rebased from the <strong>master</strong>. The rebases might require <a href="#user-content-how-to-recover-after-upstream-branch-was-rebased">a parent commit change</a>, if git is not able to rebase automatically.</p>
+<h4 id="hotfix-branch">HotFix branch</h4>
+<p>It is a branch for hot fixes. It should contain only urgent hot fixes for the released versions, which can't wait until the next scheduled release of the product.</p>
+<p>Once a hot fix is merged back in to the <strong>master</strong>, the <strong>dev</strong> branch should be rebased from the master to get new changes.</p>
+<p>The branch should be deleted as soon as merged with the master.</p>
+<h4 id="featureticket-branches">FEATURE/TICKET branches</h4>
+<p>Each business or development task/ticket/feature should have at least one feature branch. Such branches must be rebased to <strong>dev</strong> as often as possible to simplify future merging.</p>
+<p>Rebasing is important to keep new commits together for possible tuning or squashing in the feature.</p>
+<p>Whenever a feature is ready (or a stable part of the feature) it can be merged with the <strong>dev</strong> branch.</p>
+<p>It is recommended to keep feature branches even after their merge with <strong>dev</strong>. It will simplify fine tuning in case if the feature represented by the branch will be reverted from the <strong>dev</strong> for additional development or fixes/corrections.</p>
+<p>Feature branches should be deleted as soon as their commits are merged into the <strong>master</strong> via the <strong>dev</strong> branch.</p>
+<h3 id="roles">Roles</h3>
+<p>Release manager (r/w: MASTER, DEV, RC)
+Developer (r/w: FEATURE(s), HOT FIX; read only: MASTER, DEV)</p>
+<h2 id="user-stories">User stories</h2>
+<p>In the following documentation we use:</p>
+<ul>
+<li><strong>mainrepo_url</strong> - the url of the main repo, which is restricted and managed by release managers only. Developers must not have write permissions on it.</li>
+<li><strong>mainrepo</strong> - the name of the main repo.</li>
+<li><strong>url_of_the_fork</strong> - the url of your fork repo of the main repo.</li>
+<li><strong>developerrepo_url</strong> - the url of a developer's repo.</li>
+</ul>
+<h3 id="developers">Developers</h3>
+<h4 id="prepare-the-environment">Prepare the environment</h4>
+<ol>
+<li>
+<p>setup git configuration. The following you have yo execute on all of your machines, or copy the git config to all of your machines.</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>git config --global branch.autosetuprebase always
+</span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>git config --global user.name &quot;FirsName LastName&quot;
+</span><span id="__span-2-3"><a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a>git config --global user.email johndoe@example.com
+</span><span id="__span-2-4"><a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a>git config --global core.ignorecase false
+</span></code></pre></div>
+</li>
+<li>
+<p>Using github fork the main repo.</p>
+</li>
+<li>
+<p>Create a local copy of the forked repo:</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>git clone url_of_the_fork
+</span></code></pre></div>
+</li>
+<li>
+<p>Now when your <strong>origin</strong> points to your fork. You need to add the main repo to your remotes as well.
+    You should have "origin --&gt; you fork" and "mainrepo --&gt; the main repo".</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>git remote add mainrepo mainrepo_url
+</span><span id="__span-4-2"><a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a>git fetch mainrepo
+</span></code></pre></div>
+</li>
+<li>
+<p>Create a local dev branch</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>git checkout -b dev mainrepo/dev
+</span></code></pre></div>
+</li>
+<li>
+<p>Push the local dev to your remote (forked repo):</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>git push -u origin dev
+</span></code></pre></div>
+</li>
+</ol>
+<h4 id="create-a-feature-branch">Create a feature branch</h4>
+<p>Each task or ticket MUST be developed in a separate branch.</p>
+<ol>
+<li>
+<p>Create a feature branch from the latest stat of the central dev.</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-7-1"><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a>git fetch mainrepo
+</span><span id="__span-7-2"><a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a>git checkout -b featureXXX mainrepo/dev
+</span></code></pre></div>
+</li>
+<li>
+<p>Push the feature branch to your fork and track it</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-8-1"><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a>git push -u origin featureXXX
+</span></code></pre></div>
+</li>
+</ol>
+<h4 id="sync-your-feature-branch">Sync your feature branch</h4>
+<p>As often as possible sync your feature branch with the central dev.</p>
+<ol>
+<li>
+<p>Sync:</p>
+<p><div class="language-text highlight"><pre><span></span><code><span id="__span-9-1"><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a>git fetch mainrepo
+</span><span id="__span-9-2"><a id="__codelineno-9-2" name="__codelineno-9-2" href="#__codelineno-9-2"></a>git checkout featureXXX
+</span><span id="__span-9-3"><a id="__codelineno-9-3" name="__codelineno-9-3" href="#__codelineno-9-3"></a>git rebase mainrepo/dev
+</span></code></pre></div>
+* Resolve conflicts if any.
+* Stage each modified file "git add <file_name>" after conflicts are resolved.
+* You can also use "git checkout --theirs/--ours <filename>" to help to resolve conflicts.
+* Use "git rebase --continue" to continue rebasing.</p>
+</li>
+<li>
+<p>push to you remote clone:</p>
+<p><div class="language-text highlight"><pre><span></span><code><span id="__span-10-1"><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a>git push origin
+</span></code></pre></div>
+Most probably your local repo and the remote repo will be diverged at this point. Git will warn you that you are about to change the history and will not allow you to push.</p>
+<p>Please, revise the output to make sure that you are actually pushing to the right repo and only after that execute the following to force (--force-with-lease) git to change the history.</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-11-1"><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a>git push --force-with-lease origin
+</span></code></pre></div>
+<p>We recommend to do push in two steps intuitionally to prevent unwanted changes.
+Even if you are 100% sure, ALWAYS first execute "git push" without "--force-with-lease". Revise the output. Check that the repo you are pushing is the the one you want and only then force push with "--force-with-lease".</p>
+</li>
+</ol>
+<h4 id="request-to-pull">Request to pull</h4>
+<ol>
+<li>
+<p>Always rebase to the main dev before requesting to pull.</p>
+<p><div class="language-text highlight"><pre><span></span><code><span id="__span-12-1"><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a>git fetch mainrepo
+</span><span id="__span-12-2"><a id="__codelineno-12-2" name="__codelineno-12-2" href="#__codelineno-12-2"></a>git checkout featureXXX
+</span><span id="__span-12-3"><a id="__codelineno-12-3" name="__codelineno-12-3" href="#__codelineno-12-3"></a>git rebase mainrepo/dev
+</span></code></pre></div>
+* Resolve conflicts if any.
+* Stage each modified file "git add <file_name>" after conflicts are resolved.
+* You can also use "git checkout --theirs/--ours <filename>" to help to resolve conflicts.
+* Use "git rebase --continue" to continue rebasing.</p>
+</li>
+<li>
+<p>Squash all of your commits. Once your code is perfect, clean up its history.</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-13-1"><a id="__codelineno-13-1" name="__codelineno-13-1" href="#__codelineno-13-1"></a>git rebase -i mainrepo/dev
+</span></code></pre></div>
+<p><strong>It is very important for the history of the main repository that all of your commits are squashed. In the future nobody is interested to see your "cosmetic changes" commits or commits related to any other minor changes. The best way to introduce a feature is to introduce it as a patch. This is why, do squash all your commits into one, write a good proper comment before requesting to pull your code.</strong></p>
+</li>
+<li>
+<p>Push your changes to your remote repo. You may need to use "push -f" since after the rebase your remote repo can be diverged from the local repo.</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-14-1"><a id="__codelineno-14-1" name="__codelineno-14-1" href="#__codelineno-14-1"></a>git push --force-with-lease origin
+</span></code></pre></div>
+</li>
+<li>
+<p>Request to pull. Let your release manager know that you want your patch to be merged with the central dev branch. Use a simple email or github to send a pull request.</p>
+</li>
+</ol>
+<p><strong>Stop working on the featureXXX branch, after you sent a request to pull. Create a new branch for any other feature/ticket/bug.</strong></p>
+<h4 id="create-patches">Create patches</h4>
+<p>Just in case if you can't just push or request to pull your changes, you can create a git patch.</p>
+<div class="language-text highlight"><pre><span></span><code>~~~~~~~~~~~~~~~~~~~~~
+git format-patch origin/master --stdout &gt; a_fix.patch
+~~~~~~~~~~~~~~~~~~~~~
+</code></pre></div>
+<p>The command above will create a patch, of the changes which differ you from the "origin/master" branch.</p>
+<h4 id="apply-a-patch">Apply a patch</h4>
+<div class="language-text highlight"><pre><span></span><code>~~~~~~~~~~~~~~~~~~~~~
+git am --signoff &lt; a_fix.patch
+~~~~~~~~~~~~~~~~~~~~~
+</code></pre></div>
+<p>If there are different line ending settings between source and dest. machines you may want to either ignore space changes - but in this case git will create a new commit ID</p>
+<div class="language-text highlight"><pre><span></span><code>~~~~~~~~~~~~~~~~~~~~~
+git am --ignore-space-change --ignore-whitespace --signoff &lt; a_fix.patch
+~~~~~~~~~~~~~~~~~~~~~
+</code></pre></div>
+<p>or try to preserver cr or the patch 0 (but this will cause a warning about trailing whitespaces).</p>
+<div class="language-text highlight"><pre><span></span><code>~~~~~~~~~~~~~~~~~~~~~
+git am --keep-cr --signoff &lt; a_fix.patch
+~~~~~~~~~~~~~~~~~~~~~
+</code></pre></div>
+<h3 id="release-manager">Release manager</h3>
+<p>The write access to the repository is restricted to release managers only. The repository contains the following permanent branches: <strong>master</strong>, <strong>dev</strong>. The "RC" and "HotFix" are created (branched) only when we need them and deleted as soon as their commits are merged into the master or when we don't need those branches.</p>
+<h4 id="prepare-the-environment_1">Prepare the environment</h4>
+<ol>
+<li>
+<p>setup git configuration. The following you have yo execute on all of your machines, or copy the git config to all of your machines.</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-19-1"><a id="__codelineno-19-1" name="__codelineno-19-1" href="#__codelineno-19-1"></a>git config --global branch.autosetuprebase always
+</span><span id="__span-19-2"><a id="__codelineno-19-2" name="__codelineno-19-2" href="#__codelineno-19-2"></a>git config --global user.name &quot;FirsName LastName&quot;
+</span><span id="__span-19-3"><a id="__codelineno-19-3" name="__codelineno-19-3" href="#__codelineno-19-3"></a>git config --global user.email johndoe@example.com
+</span><span id="__span-19-4"><a id="__codelineno-19-4" name="__codelineno-19-4" href="#__codelineno-19-4"></a>git config --global core.ignorecase false
+</span></code></pre></div>
+</li>
+<li>
+<p>Using github fork the main repo.</p>
+</li>
+<li>
+<p>Create a local copy of the forked repo:</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-20-1"><a id="__codelineno-20-1" name="__codelineno-20-1" href="#__codelineno-20-1"></a>git clone url_of_the_fork
+</span></code></pre></div>
+</li>
+<li>
+<p>Now when your <strong>origin</strong> points to your fork. You need to add the main repo to your remotes as well.
+    You should have "origin --&gt; you fork" and "mainrepo --&gt; the main repo".</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-21-1"><a id="__codelineno-21-1" name="__codelineno-21-1" href="#__codelineno-21-1"></a>git remote add mainrepo mainrepo_url
+</span><span id="__span-21-2"><a id="__codelineno-21-2" name="__codelineno-21-2" href="#__codelineno-21-2"></a>git fetch mainrepo
+</span></code></pre></div>
+</li>
+<li>
+<p>create a local <strong>dev</strong> branch with upstream to the mainrepo/dev.</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-22-1"><a id="__codelineno-22-1" name="__codelineno-22-1" href="#__codelineno-22-1"></a>git checkout -t -b dev mainrepo/dev
+</span></code></pre></div>
+</li>
+</ol>
+<h4 id="process-pull-requests">Process pull requests</h4>
+<p>You can process pull requests automatically if you are using GitLab or GitHub. Both vendors offer users a possbility to use fast forward merging.</p>
+<p>GitLab: https://docs.gitlab.com/ee/user/project/merge_requests/fast_forward_merge.html ("Fast-forward merge")</p>
+<p>GitHub: https://help.github.com/articles/merging-a-pull-request/ ("Rebase and merge")</p>
+<ol>
+<li>
+<p>update</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-23-1"><a id="__codelineno-23-1" name="__codelineno-23-1" href="#__codelineno-23-1"></a>git fetch origin
+</span><span id="__span-23-2"><a id="__codelineno-23-2" name="__codelineno-23-2" href="#__codelineno-23-2"></a>git fetch mainrepo
+</span></code></pre></div>
+</li>
+<li>
+<p>Add the developer's repo to your remotes. You need to do it only once per developer, when you for the first time fetch from this developer</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-24-1"><a id="__codelineno-24-1" name="__codelineno-24-1" href="#__codelineno-24-1"></a>git remote add dev_name developerrepo_url
+</span><span id="__span-24-2"><a id="__codelineno-24-2" name="__codelineno-24-2" href="#__codelineno-24-2"></a>git fetch dev_name
+</span></code></pre></div>
+</li>
+<li>
+<p>Now merge the changes the developer has provided</p>
+<p><div class="language-text highlight"><pre><span></span><code><span id="__span-25-1"><a id="__codelineno-25-1" name="__codelineno-25-1" href="#__codelineno-25-1"></a>git checkout -f dev
+</span><span id="__span-25-2"><a id="__codelineno-25-2" name="__codelineno-25-2" href="#__codelineno-25-2"></a>git rebase mainrepo/dev
+</span><span id="__span-25-3"><a id="__codelineno-25-3" name="__codelineno-25-3" href="#__codelineno-25-3"></a>git merge --ff-only dev_name/featureXXX
+</span></code></pre></div>
+   If there are conflicts or git says, that it can't use fast forward, than reject the request and ask developer to rebase from the main dev branchy again, fix conflicts if needed and send a new pull request.</p>
+</li>
+<li>
+<p>If no conflicts are found, push this commit to the main dev branch:</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-26-1"><a id="__codelineno-26-1" name="__codelineno-26-1" href="#__codelineno-26-1"></a>git push mainrepo dev:dev
+</span></code></pre></div>
+</li>
+</ol>
+<h4 id="prepare-a-release-candidate">Prepare a Release Candidate</h4>
+<h4 id="hot-fixes">Hot Fixes</h4>
+<h2 id="tips-and-howtos">Tips and HOWTOs</h2>
+<h3 id="how-to-recover-after-upstream-branch-was-rebased">How to recover after upstream branch was rebased.</h3>
+<p>The following tip will help us to recover in cases when you or your colleague had to change something in the history of a high level branch (our upstream).
+It can be easily the case when you need to change history (rebase, move/delete/squash commits, etc.) of the DEV branch, for example. When the history of dev branch is changed, then all branches inherited from it (feature branches) will have problems to rebase on it, because all commits, which differ you from the dev branch will be consider by git as new (your) changes and it will try to merge them.</p>
+<p>Let's take an example.
+Dev before change of the history and F is your feature branch:</p>
+<div class="language-text highlight"><pre><span></span><code>~~~~~~~~~~~~~~~~~~~~~
+C0
+|
+C1
+|
+C2
+|\
+C3 cf1
+C4 cf2
+ ~~~~~~~~~~~~~~~~~~~~~
+</code></pre></div>
+<p>‘DEV’ has C1,C2,C3,C4
+‘F’ has C1,C2,cf1,cf2</p>
+<p>After the change of the history of the DEV it looks like:</p>
+<div class="language-text highlight"><pre><span></span><code>~~~~~~~~~~~~~~~~~~~~~
+C0
+|
+C1x
+|
+C2x
+|
+C3x
+C4x
+~~~~~~~~~~~~~~~~~~~~~
+</code></pre></div>
+<p>And F still looks like:</p>
+<div class="language-text highlight"><pre><span></span><code>~~~~~~~~~~~~~~~~~~~~~
+C0
+|
+C1
+|
+C2
+|
+cf1
+|
+cf2
+~~~~~~~~~~~~~~~~~~~~~
+</code></pre></div>
+<p>For git commits C1, C2 is now different from the commits C1x, C2x from the DEV branch.
+To avoid merging nightmare and duplications of the commits we have to just change the parent commit of our commits in the feature branch. The commits cf1, cf2 is our commits belonging to the new feature. At the moment their parent is C2.</p>
+<p>So, what basically happened is that our feature branch is not forked from the changed DEV anymore. But we want it to depend on the DEV. What we need is only to move commits of the feature branch to a new parent - C2x.</p>
+<p>Fortunately git can easily help us to fix our problem. Checkout your feature branch you want to fix and execute the following:</p>
+<div class="language-text highlight"><pre><span></span><code>~~~~~~~~~~~~~~~~~~~~~
+git fetch mainrepo
+git rebase --onto mainrepo/dev dev F
+~~~~~~~~~~~~~~~~~~~~~
+</code></pre></div>
+<p>This basically says, “Check out the F branch, figure out the patches from the common ancestor of the mainrepo/dev and our local dev (which is not changed yet) branches, and then replay them onto master.”
+If you don't have a local, unchanged version of the DEV branch, then you can even manually find out the commit ID, which is the last common between the new DEV and your F branch and execute:</p>
+<div class="language-text highlight"><pre><span></span><code>~~~~~~~~~~~~~~~~~~~~~
+git rebase --onto &lt;new-parent&gt; &lt;old-parent&gt; F
+~~~~~~~~~~~~~~~~~~~~~
+</code></pre></div>
+<p><a href="http://git-scm.com/book/en/Git-Branching-Rebasing">HERE find more on this</a></p>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    <script id="__config" type="application/json">{"base": "..", "features": ["content.code.copy"], "search": "../assets/javascripts/workers/search.07f07601.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.56dfad97.min.js"></script>
+      
+    
+  </body>
+</html>
