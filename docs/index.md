@@ -6,7 +6,11 @@ Sharing knowledge about anything <3
 
 This page is powered by [mkdocs.org](https://www.mkdocs.org) and using [mkdocs material](https://squidfunk.github.io/mkdocs-material/).
 
-To contribute kindly clone the [repo](https://github.com/vahoang/knowledge-graph), read the template document [here](https://squidfunk.github.io/mkdocs-material/getting-started/) and add new pages by creating PR.
+To contribute kindly:
+
+1. Clone the [repo](https://github.com/vahoang/knowledge-graph)
+2. Read the template document [here](https://squidfunk.github.io/mkdocs-material/getting-started/)
+3. Add new pages by creating PR to `master` branch
 
 ## Mkdocs Commands
 
