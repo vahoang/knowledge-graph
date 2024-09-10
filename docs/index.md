@@ -1,6 +1,6 @@
-# Welcome
+# About this page
 
-Sharing stuffs.
+Sharing knowledge about anything <3
 
 ## How to contribute
 
